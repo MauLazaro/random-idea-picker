@@ -36,6 +36,11 @@ export const getDinnerList = [
     "Caprese Salad with Chicken"
 ];
 
-export const getProgrammingLeangueList = [
-    
+export const getProgrammingSoftwaresList = [
+    "Angular",
+    "React",
+    "Vue",
+    "Java",
+    "C#",
+    ".Net"
 ];

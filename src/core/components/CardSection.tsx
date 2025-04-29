@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Card, CardBody, Button, Tabs, Tab, Input, Spinner } from "@heroui/react";
-import { getDinnerList, getProjectList } from "../utils/getDefinedLists";
+import { getDinnerList, getProjectList, getProgrammingSoftwaresList } from "../utils/getDefinedLists";
 import { Dices } from "lucide-react";
 
 const CardSection = () => {
@@ -8,7 +8,7 @@ const CardSection = () => {
     const [valueSelected, setValueSelected] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     
-    let tabs = [{ id: "Project ideas" }, { id: "Dinner ideas" }];
+    let tabs = [{ id: "Project ideas" }, { id: "Dinner ideas" }, { id: "Languages & Frameworks"}];
     
     const handlePicker = () => {
         setIsLoading(true);
@@ -17,8 +17,10 @@ const CardSection = () => {
                 let list;
                 if (selectedTab == tabs[0].id) {
                     list = getProjectList;
-                } else {
+                } else if (selectedTab == tabs[1].id) {
                     list = getDinnerList;
+                } else {
+                    list = getProgrammingSoftwaresList;
                 }
                 
                 if (list && list.length > 0) {
@@ -57,7 +59,7 @@ const CardSection = () => {
                     <Input
                         isReadOnly={isLoading == false}
                         isDisabled={isLoading == true}
-                        className="max-w-xs"
+                        className="max-w-md"
                         type="text"
                         variant="flat"
                         value={valueSelected}

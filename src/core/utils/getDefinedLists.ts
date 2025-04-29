@@ -35,3 +35,7 @@ export const getDinnerList = [
     "Chili con Carne",
     "Caprese Salad with Chicken"
 ];
+
+export const getProgrammingLeangueList = [
+    
+];
